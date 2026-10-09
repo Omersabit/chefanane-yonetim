@@ -7,6 +7,17 @@
     <!-- Yonetim ekrani arama motorlarina kapali. -->
     <meta name="robots" content="noindex, nofollow" />
     <meta name="referrer" content="no-referrer" />
+    <!--
+      Icerik guvenlik politikasi (R78, proje sahibinin karari 2026-10-09): kod yalnizca bu
+      siteden calisir, veri yalnizca Supabase'e gider, cerceve yalnizca YouTube oynaticisi.
+      Supabase adresi yer tutucusu derlemede EXPO_PUBLIC_SUPABASE_URL ile degistirilir
+      (.github/workflows/web-staging-deploy.yml); degismezse Supabase istekleri engellenir.
+      GitHub Pages baslik gonderemedigi icin meta etiketidir (frame-ancestors desteklenmez).
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://mzlppanwrpkyiyxanbow.supabase.co https://i.ytimg.com; font-src 'self' data:; connect-src 'self' https://mzlppanwrpkyiyxanbow.supabase.co blob: data:; frame-src https://www.youtube-nocookie.com; media-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'"
+    />
     <title>Chefanane Yönetim</title>
     <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
     <style id="expo-reset">
@@ -29,6 +40,6 @@
   <body>
     <noscript>Chefanane Yönetim için JavaScript gerekir.</noscript>
     <div id="root"></div>
-  <script src="/_expo/static/js/web/index-148bd42c8b299cdc4ce04efc6a1b24a4.js" defer></script>
+  <script src="/_expo/static/js/web/index-4aeee1cf49992c6bf2fcfdfcbbaff0c0.js" defer></script>
 </body>
 </html>
