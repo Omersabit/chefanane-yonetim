@@ -19,12 +19,26 @@
       content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://mzlppanwrpkyiyxanbow.supabase.co https://i.ytimg.com; font-src 'self' data:; connect-src 'self' https://mzlppanwrpkyiyxanbow.supabase.co blob: data:; frame-src https://www.youtube-nocookie.com; media-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'"
     />
     <title>Chefanane Yönetim</title>
+    <!-- Tema (2026-10-19): ilk karede zemin kayitli secime / sistem temasina gore (theme-boot.js). -->
+    <meta name="color-scheme" content="light dark" />
+    <script src="/theme-boot.js"></script>
     <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
     <style id="expo-reset">
+      /*
+        Zemin yalnizca <html>'de: betik calismazsa yedek olarak sistem temasi (gunduz #F3EFE6,
+        gece #151210; config/theme.ts). Betik ve uygulama <html> satir ici stiliyle bunu ezer.
+      */
+      html {
+        background-color: #f3efe6;
+      }
+      @media (prefers-color-scheme: dark) {
+        html {
+          background-color: #151210;
+        }
+      }
       html,
       body {
         height: 100%;
-        background-color: #000000;
       }
       body {
         overflow: hidden;
@@ -40,6 +54,6 @@
   <body>
     <noscript>Chefanane Yönetim için JavaScript gerekir.</noscript>
     <div id="root"></div>
-  <script src="/_expo/static/js/web/index-95d22b7f8c82c803526b69234a0c8440.js" defer></script>
+  <script src="/_expo/static/js/web/index-55564f9bc2e43175ab77ed2997ca1a94.js" defer></script>
 </body>
 </html>
