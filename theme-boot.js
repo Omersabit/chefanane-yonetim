@@ -8,7 +8,7 @@
  *
  * Kural uygulamayla AYNIDIR: kayitli secim (`state/themeDefault.ts`,
  * `THEME_MODE_KEY`) yoksa tarayicinin / isletim sisteminin temasi
- * (react-native-web `Appearance`: yalnizca "dark" eslesirse gece). Renkler
+ * (react-native-web `Appearance`: yalnizca "dark" eslesirse Espresso). Renkler
  * `config/theme.ts` paletlerinin `background` degerleridir; degisirse burasi
  * da guncellenir. Sonraki degisimleri `state/theme.tsx` uygular.
  */
@@ -20,11 +20,13 @@
     // Depolama kapali (gizli pencere, engelli site verisi): sistem temasi.
     mode = null;
   }
-  if (mode !== 'light' && mode !== 'dark') {
+  const backgrounds = { light: '#F3EFE6', dark: '#151210', night: '#16202A' };
+  if (!Object.prototype.hasOwnProperty.call(backgrounds, mode)) {
     const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     mode = dark ? 'dark' : 'light';
   }
   const root = document.documentElement;
-  root.style.backgroundColor = mode === 'light' ? '#F3EFE6' : '#151210';
-  root.style.colorScheme = mode;
+  root.style.backgroundColor = backgrounds[mode];
+  // Tarayici yalnizca acik / koyu bilir: Espresso ve Gece koyudur.
+  root.style.colorScheme = mode === 'light' ? 'light' : 'dark';
 })();
